@@ -1,0 +1,16 @@
+<h1>Edit :</h1>
+<form action="/Reviews/Details/@(Model.ReviewId)" method="post">
+  <label for="country">Country</label>
+  <input id="country" name="country" type="text" value="@(Model.Country)">
+  <label for="city">City</label>
+  <input id="city" name="city" type="text" value="@(Model.City)">
+  <label for="author">Author</label>
+  <input id="author" name="author" type="number" value="@(Model.Author)">
+  <label for="rating">Rating</label>
+  <input id="rating" name="rating" type="text" value="@(Model.Rating)">
+  <label for="description">Review</label>
+  <input id="description" name="description" type="text" value="@(Model.Description)">
+  <button type="submit">Go!</button>
+</form>
+
+<a href="/Reviews/Details/@(Model.ReviewId)"><p>Return to Details</p></a>
