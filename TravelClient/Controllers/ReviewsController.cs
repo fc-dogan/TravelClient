@@ -15,5 +15,19 @@ namespace TravelClient.Controllers
       var allReviews = Review.GetReviews();
       return View(allReviews);
     }
+    [HttpPost]
+    public IActionResult Index(Review review)
+    {
+      Review.Post(review);
+      return RedirectToAction("Index");
+    }
+
+    public IActionResult Details(int id)
+    {
+      var review = Review.GetDetails(id);
+      return View(review);
+    }
+
+    
   }
 }

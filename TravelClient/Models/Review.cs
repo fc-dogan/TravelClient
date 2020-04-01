@@ -42,11 +42,11 @@ namespace TravelClient.Models
       return review;
     }
 
-    // public static void Post(Animal animal)
-    // {
-    //   string jsonAnimal = JsonConvert.SerializeObject(animal);
-    //   var apiCallTask = ApiHelper.Post(jsonAnimal);
-    // }
+    public static void Post(Review review)
+    {
+      string jsonReview = JsonConvert.SerializeObject(review);
+      var apiCallTask = ApiHelper.Post(jsonReview);
+    }
 
     // public static void Put(Animal animal)
     // {
