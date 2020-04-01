@@ -31,16 +31,16 @@ namespace TravelClient.Models
       return reviewList;
     }
 
-    // public static Animal GetDetails(int id)
-    // {
-    //   var apiCallTask = ApiHelper.Get(id);
-    //   var result = apiCallTask.Result;
+    public static Review GetDetails(int id)
+    {
+      var apiCallTask = ApiHelper.Get(id);
+      var result = apiCallTask.Result;
 
-    //   JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
-    //   Animal animal = JsonConvert.DeserializeObject<Animal>(jsonResponse.ToString());
+      JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
+      Review review = JsonConvert.DeserializeObject<Review>(jsonResponse.ToString());
 
-    //   return animal;
-    // }
+      return review;
+    }
 
     // public static void Post(Animal animal)
     // {
