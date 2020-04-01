@@ -28,6 +28,26 @@ namespace TravelClient.Controllers
       return View(review);
     }
 
+    public IActionResult Edit(int id)
+    {
+      var review = Review.GetDetails(id);
+      return View(review);
+    }
+
+    [HttpPost]
+    public IActionResult Details(int id, Review review)
+    {
+      review.ReviewId = id;
+      Review.Put(review);
+      return RedirectToAction("Details", id);
+    }
+
+    public IActionResult Delete(int id)
+    {
+      Review.Delete(id);
+      return RedirectToAction("Index");
+    }
+
     
   }
 }
