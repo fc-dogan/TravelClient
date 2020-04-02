@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using TravelClient.Providers;
 
-namespace TravelClient.ViewModels
+namespace TravelClient.Models
 {
   public class LoginViewModel
   {

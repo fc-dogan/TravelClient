@@ -55,6 +55,12 @@ namespace TravelClient.Controllers
       return RedirectToAction("Index");
     }
 
+    public IActionResult Random()
+    {
+      var review = Review.GetRandom();
+      return View(review);
+    }
+
     
   }
 }

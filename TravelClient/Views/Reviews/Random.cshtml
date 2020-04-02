@@ -1,0 +1,15 @@
+@using TravelClient.Models
+
+<h2>@Model.Author's Review Details:</h2>
+<hr>
+<ul>
+  <li>ID: @Model.ReviewId</li>
+  <li>Country: @Model.Country</li>
+  <li>City: @Model.City</li>
+  <li>Author: @Model.Author</li>
+  <li>Rating: @Model.Rating</li>
+  <li>Description: @Model.Description</li>
+</ul>
+<br>
+<hr>
+<p>@Html.ActionLink("See Random Review", "Random", "Reviews", null, new { @class = "btn btn-outline-info"})</p>
