@@ -15,7 +15,9 @@ namespace TravelClient.Models
     public string City { get; set; }
   
     public string Author {get; set;}
-  
+    
+    [Required]
+    [Range(1, 5, ErrorMessage = "Rating must be between 1 and 5.")]
     public int Rating {get; set;}
   
     public string Description {get; set;}

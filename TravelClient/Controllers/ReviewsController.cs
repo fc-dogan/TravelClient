@@ -33,6 +33,13 @@ namespace TravelClient.Controllers
       var review = Review.GetDetails(id);
       return View(review);
     }
+    [HttpPost]
+    public IActionResult Edit(int id, Review review)
+    {
+      review.ReviewId = id;
+      Review.Put(review);
+      return RedirectToAction("Index");
+    }
 
     [HttpPost]
     public IActionResult Details(int id, Review review)

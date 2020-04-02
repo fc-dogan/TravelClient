@@ -1,33 +1,27 @@
-<h1>Edit :</h1>
-<form action="/Reviews/Details/@(Model.ReviewId)" method="post">
-  <div class="form-group">
-    <label for="country">Country</label>
-    <input id="country" class="form-control" name="country" type="text" value="@(Model.Country)">
-  </div>
-  <div class="form-group">
-    <label for="city">City</label>
-    <input id="city" class="form-control" name="city" type="text" value="@(Model.City)">
-  </div>
-  <div class="form-group">
-    <label for="author">Author</label>
-    <input id="author" class="form-control" name="author" type="text" value="@(Model.Author)">
-  </div>
-  <div class="form-group">
-    <label for="rating">Rating</label>
-    <select id="rating" name="rating" class="form-control" value="@(Model.Rating)">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="description">Review</label>
-    <input class="form-control rounded-0" id="description" name="description" rows="3" value="@(Model.Description)">
-    @* <textarea class="md-textarea form-control" id="description" name="description" rows="3" value="@(Model.Description)"></textarea> *@
-  </div>
-    <button type="submit">Edit!</button>
-</form>
+  
+@model TravelClient.Models.Review
 
-<a href="/Reviews/Details/@(Model.ReviewId)"><p>Return to Details</p></a>
+<h4>Edit this Review</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.ReviewId)
+
+  @Html.LabelFor(model => model.Country)
+  @Html.TextBoxFor(model => model.Country, new { @class = "form-control"})
+  <br>
+  @Html.LabelFor(model => model.City)
+  @Html.TextBoxFor(model => model.City, new { @class = "form-control"})
+  <br>
+  @Html.LabelFor(model => model.Author)
+  @Html.TextBoxFor(model => model.Author, new { @class = "form-control"})
+  <br>
+  @Html.LabelFor(model => model.Rating)
+  @Html.TextBoxFor(model => model.Rating, new { @class = "form-control"})
+  @Html.ValidationMessageFor(m => m.Rating, "Rating must be between 1 and 5.", new { @class = "text-danger" })
+  <br>
+  @Html.LabelFor(model => model.Description)
+  @Html.TextAreaFor(model => model.Description, new { @class = "form-control"})
+  <br>
+  <input type="submit" value="Save" class="btn btn-outline-info" />
+}
