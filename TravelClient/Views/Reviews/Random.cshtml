@@ -12,4 +12,4 @@
 </ul>
 <br>
 <hr>
-<p>@Html.ActionLink("See Random Review", "Random", "Reviews", null, new { @class = "btn btn-outline-info"})</p>
+<p>@Html.ActionLink("See Random Review", "Random", "Reviews", new { id = Model.ReviewId }, new { @class = "btn btn-outline-info"})</p>
