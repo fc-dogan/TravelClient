@@ -13,9 +13,7 @@
 </ul>
 <br>
 
-<a href="/Reviews/Edit/@(Model.ReviewId)"><p>Edit</p></a>
-<br>
+@Html.ActionLink("Edit Review", "Edit", new { id = Model.ReviewId }, new {@class="btn btn-success"})
+@Html.ActionLink("Delete Review", "Delete", new { id = Model.ReviewId }, new {@class="btn btn-danger"})
+@Html.ActionLink("Back to Reviews", "Index", new { @class = "btn btn-outline-info"})
 
-<a href="/Reviews"><p>Return</p></a>
-
-<a href="/Reviews/Delete/@(Model.ReviewId)"><p>Delete Review</p></a>
